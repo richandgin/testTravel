@@ -12,7 +12,7 @@ body {
 nav {
     background-color: black;
     opacity: .7;
-    padding: 10px;
+    padding: 10px 10px;
   }
 
 .navbar {
@@ -101,7 +101,7 @@ nav a {
 
 .social-icons a {
     color: white;
-    font-size: 27px;
+    font-size: 20px;
 }
 
 .social-icons a:hover {
@@ -128,8 +128,30 @@ nav a {
 .info-text {
     color: white;
     width: 300;
-    background-color: grey;
+    background-color: rgb(13, 15, 15);
     opacity: .8;
     padding: 10;
     border-color: red;
+    border-radius: 5px;
+    outline: 1px;
+}
+
+.book-button {
+    padding: 7px 15px;
+    padding-left: 15px;
+    border-radius: 4px;
+    color: white;
+    background-color: #465e47;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navbar-search button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    color: white;
+    background-color: #465e47;
+    border: none;
+    cursor: pointer;
 }
