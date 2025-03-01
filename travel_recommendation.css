@@ -86,13 +86,22 @@ nav a {
 .social-icons {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     padding: 10px 0;
+}
+
+.sideline {
+    border-left: 2px solid white; /* Adjust thickness and color */
+    height: 200; /* Covers the top third of the sidebar */
+    position: static;
+    top: 0;
+    left: 50%; /* Center the line horizontally */
+    transform: translateX(-50%);
 }
 
 .social-icons a {
     color: white;
-    font-size: 30px;
+    font-size: 27px;
 }
 
 .social-icons a:hover {
