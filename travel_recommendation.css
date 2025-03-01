@@ -60,15 +60,16 @@ nav a {
     background-color: white;
 }
 
-sidenav {
+.sidenav {
     height: 100%;
-    width: 210px;
+    width: 50px;
+    margin-top: 100;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: transparent;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -82,12 +83,23 @@ sidenav {
     display: block;
 }
 
-.sidenav a:hover {
-    background-color: #575757;
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    padding: 10px 0;
 }
 
+.social-icons a {
+    color: white;
+    font-size: 30px;
+}
+
+.social-icons a:hover {
+    color: #575757;
+}
 .main-content {
-    margin-left: 210px; /* Same as the width of the sidenav */
+    margin-left: 50px; /* Same as the width of the sidenav */
     padding: 20px;
     color: white;
 }
