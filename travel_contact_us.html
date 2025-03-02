@@ -44,14 +44,13 @@
             <h2>CONTACT US</h2>
         </div>
         <div class="contact-info-box">
-            <p>Name</p>
-            <input type="text" id="contact-name" placeholder="Enter your name"></li><br>
-            <p>Email</p>
-            <input type="text" id="contact-email" placeholder="Enter your Email"></li><br>
-            <p>Message</p>
-            <input type="text" id="contact-message" rows="10" placeholder="Enter your message"></li><br>
-            <button id='btnSubmit'>Submit</button>
-            <p> </p>
+            <label for="contact-name">Name</label><br>
+            <textarea id="contact-name" cols= "60" rows="1" placeholder="Enter your name"></textarea><br><br>
+            <label for="contact-email">Email</label><br>
+            <textarea id="contact-email"  cols="60" rows="1" placeholder="Enter your name"></textarea><br><br>
+            <label for="contact-message">Message</label><br>
+            <textarea id="contact-message" cols="60" rows="10" placeholder="Enter your message"></textarea><br>
+            <button onclick="addContact()">Submit</button>
         </div>
     </div>
 

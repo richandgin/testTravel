@@ -147,7 +147,6 @@ nav a {
     background-color: rgb(13, 15, 15);
     opacity: .6;
     padding: 20;
-    border-color: red;
     border-radius: 5px;
     outline: 1px;
 }
@@ -217,7 +216,7 @@ nav a {
     font-size: 12px;
     width: 50%;
     float: none;
-    opacity: .9;
+    opacity: .6;
   }
 
   .contact-us h2 {
@@ -228,7 +227,7 @@ nav a {
   }
 
   .contact-info-box {
-    background-color: black;
-    opacity: .8;
+    color: transparent;
+    background-color: rgba(128, 125, 125, 0.89);
     padding: 10px
   }
