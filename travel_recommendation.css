@@ -204,3 +204,25 @@ nav a {
   .invisible {
     visibility: hidden;
   }
+
+  .contact-us {
+    width:100%;
+    display: flex;
+    overflow:auto;
+    padding: 100px 100px;
+  }
+
+  .contact-us div {
+    color: white;
+    font-size: 12px;
+    width: 50%;
+    float: none;
+    opacity: .9;
+  }
+
+  .contact-us h2 {
+    font-size: 48px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+  }
