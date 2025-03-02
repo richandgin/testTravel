@@ -71,7 +71,7 @@ nav a {
     margin-left: 5px;
     border-radius: 4px;
     color: white;
-    background-color: #465e47;
+    background-color: #2b8b87;
     border: none;
     cursor: pointer;
 }
@@ -166,7 +166,7 @@ nav a {
     padding-left: 15px;
     border-radius: 4px;
     color: white;
-    background-color: #465e47;
+    background-color: #2b8b87;
     border: none;
     cursor: pointer;
   }
@@ -232,7 +232,7 @@ nav a {
     color: transparent;
     background-color: black;
     padding: 10px;
-    opacity: .5;
+    opacity: .7;
   }
 
   .info-txt {
@@ -247,7 +247,7 @@ nav a {
     padding-left: 15px;
     border-radius: 4px;
     color: white;
-    background-color: #465e47;
+    background-color: #2b8b87;
     border: none;
     cursor: pointer;
     opacity: 1;
