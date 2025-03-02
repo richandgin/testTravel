@@ -157,7 +157,7 @@ nav a {
     font-size: 12px;
     width: auto;
     background-color: rgb(13, 15, 15);
-    opacity: .6;
+    opacity: .7;
     padding: 10px;
 }
 
@@ -183,14 +183,15 @@ nav a {
     width: 25%;
     float:left;
     background-color: black;
-    opacity: .8;
+    opacity: .7;
   }
 
   .myTeam button {
     width: 200px;
     color: white;
     background-color: blue;
-    opacity: .8;
+    opacity: 1;
+    border-radius: 4px;
   }
 
   .myTeam h2 {
@@ -198,4 +199,8 @@ nav a {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: white;
+  }
+
+  .invisible {
+    visibility: hidden;
   }
