@@ -188,3 +188,10 @@ nav a {
     background-color: black;
     opacity: .5;
   }
+
+  .myTeam button {
+    width: 200px;
+    color: white;
+    background-color: blue;
+    opacity: .9;
+  }
