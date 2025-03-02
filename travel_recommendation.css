@@ -174,14 +174,19 @@ nav a {
     cursor: pointer;
   }
 
-  div.myTeam {
+  .myTeam {
     width:100%;
+    display: flex;
+    flex-direction: row;
     overflow:auto;
   }
-  div.myTeam div {
-    color: rgb(47, 138, 100)
-    width:33%;  
+  
+  .myTeam div {
+    color: white;
+    padding: 10 10 10 10;
+    width: 25%;
     float:left;
-    background-color: grey;
-    opacity: 6;
+    background-color: black;
+    opacity: .6;
+    
   }
