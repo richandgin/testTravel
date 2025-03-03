@@ -200,7 +200,7 @@ nav a {
   .myTeam button {
     width: 200px;
     color: white;
-    background-color: blue;
+    background-color: rgb(101, 101, 243);
     opacity: 1;
     border-radius: 4px;
   }
