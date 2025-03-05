@@ -50,15 +50,17 @@ xhr.responseType = 'json';
 };
 */
 
-function cmdSearch() {
+xhr.onload = function () {
     var searchStr = document.getElementById('conditionInput').value;
     lowerCasesearchStr = searchStr.toLowerCase();
-    /*alert('Search for: ' + lowerCasesearchStr);*/
-
-    var responseData = JSON.parse(xhr.responseText);
-    /*var beaches = xhr.response.beaches;*/
+    alert('Search for: ' + lowerCasesearchStr);
+    debugger
+    /*var responseData = JSON.parse(xhr.responseText);*/
+    var beaches = xhr.response.beaches;
     /*var beaches = xhr.response.searchStr;*/
-    var beaches = responseData.searchStr;
+    /*var beaches = responseData.find(function(item) {
+        return item.name === lowerCasesearchStr;
+    });*/
     var locationsDiv = document.getElementById('locations');
 
   
@@ -103,4 +105,6 @@ function cmdClearSearch() {
     locationsDiv = null;
 }
 
-xhr.send();
+function cmdSearch() {
+    xhr.send();
+}
