@@ -51,23 +51,21 @@ xhr.responseType = 'json';
 */
 
 function cmdSearch() {
-    debugger
-
+    
     var beaches = xhr.response.beaches;
     var locationsDiv = document.getElementById('locations');
 
     beaches.forEach(function(beach) {
         var beachDiv = document.createElement('div');
         /*beachDiv.classList.add('beach');  */
-        beachDiv.classList = "w3-card-4";
-        beachDiv.style = "width:50%";
+        beachDiv.classList = "card-info";
+        beachDiv.style = "width:100%";
 
         var itemurl = document.createElement('img');
         itemurl.src = beach.imageUrl;
-        itemurl.style = "width:400px; height:300px";
+        itemurl.classList = "card-photo";
 
         var infoDiv = document.createElement('div');
-        infoDiv.classList = "card-info";
         var beachname = document.createElement('p');
         beachname.textContent = beach.name;
         beachname.classList = "card-name";
@@ -76,10 +74,17 @@ function cmdSearch() {
         description.textContent = beach.description;
         description.classList = "card-description";
 
+        var newbutton = document.createElement('button');
+        newbutton.textContent = "View";
+        newbutton.id = "cmdViewItem";
+        newbutton.classList = "card-button";
+
+        debugger
         beachDiv.appendChild(itemurl);
         beachDiv.appendChild(infoDiv);
         beachDiv.appendChild(beachname);
-        beachDiv.appendChild(description);
+        beachDiv.appendChild(description)
+        beachDiv.appendChild(newbutton);
 
         locationsDiv.appendChild(beachDiv);
     });
