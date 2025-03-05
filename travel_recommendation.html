@@ -20,7 +20,7 @@
         <div class="navbar-search">
             <input type="text" id="conditionInput" placeholder="Enter a destination or keyword"></li>
             <button id='btnSearch' onclick="cmdSearch()">Search</button>
-            <button id='btnClearSearch'>Clear</button>
+            <button id='btnClearSearch' onclick="cmdClearSearch()">Clear</button>
         </div>
     </nav>
     <div class="sidenav">
@@ -47,7 +47,9 @@
             ignites a sense of wonder.</p>
             <button class="book-button" id='booknow'>BOOK NOW</button>
         </div>
-        <div id="locationsDiv"></div>
+        <div class="split-content">
+            <div id="locations"></div>
+        </div>
         <!--<div id="searchInfo">
             <div class="w3-card-4" style="width:50%">
                 <img src="Sydney.jpg" alt="Sydney" style="width:100%; height:100%">

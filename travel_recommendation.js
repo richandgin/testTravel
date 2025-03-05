@@ -50,33 +50,44 @@ xhr.responseType = 'json';
 };
 */
 
-
-
 function cmdSearch() {
     debugger
 
     var beaches = xhr.response.beaches;
-    var beachsDiv = document.getElementById('beaches');
+    var locationsDiv = document.getElementById('locations');
 
     beaches.forEach(function(beach) {
         var beachDiv = document.createElement('div');
-        beachDiv.classList.add('beach');
+        /*beachDiv.classList.add('beach');  */
+        beachDiv.classList = "w3-card-4";
+        beachDiv.style = "width:50%";
 
         var itemurl = document.createElement('img');
-        itemurl.textContent = beach.imageUrl;
+        itemurl.src = beach.imageUrl;
+        itemurl.style = "width:400px; height:300px";
 
-        var beachname = document.createElement('h2');
+        var infoDiv = document.createElement('div');
+        infoDiv.classList = "card-info";
+        var beachname = document.createElement('p');
         beachname.textContent = beach.name;
+        beachname.classList = "card-name";
 
         var description = document.createElement('p');
         description.textContent = beach.description;
+        description.classList = "card-description";
 
         beachDiv.appendChild(itemurl);
+        beachDiv.appendChild(infoDiv);
         beachDiv.appendChild(beachname);
         beachDiv.appendChild(description);
 
         locationsDiv.appendChild(beachDiv);
     });
 };
+
+function cmdClearSearch() {
+    beachsDiv = null;
+    locationsDiv = null;
+}
 
 xhr.send();
