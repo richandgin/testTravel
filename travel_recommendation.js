@@ -51,14 +51,22 @@ xhr.responseType = 'json';
 */
 
 function cmdSearch() {
-    
-    var beaches = xhr.response.beaches;
+    var searchStr = document.getElementById('conditionInput').value;
+    lowerCasesearchStr = searchStr.toLowerCase();
+    /*alert('Search for: ' + lowerCasesearchStr);*/
+
+    var responseData = JSON.parse(xhr.responseText);
+    /*var beaches = xhr.response.beaches;*/
+    /*var beaches = xhr.response.searchStr;*/
+    var beaches = responseData.searchStr;
     var locationsDiv = document.getElementById('locations');
+
+  
 
     beaches.forEach(function(beach) {
         var beachDiv = document.createElement('div');
         /*beachDiv.classList.add('beach');  */
-        beachDiv.classList = "card-info";
+        beachDiv.classList = "card-info"; 
         beachDiv.style = "width:100%";
 
         var itemurl = document.createElement('img');
