@@ -62,7 +62,7 @@ xhr.onload = function () {
         var beaches = xhr.response.temples;
     } else if (lcSearchStr === 'countries') {
         var countries = xrh.response.countries;        
-    }
+    };
 
     var locationsDiv = document.getElementById('locations');
 
@@ -139,14 +139,43 @@ xhr.onload = function () {
 
             locationsDiv.appendChild(beachDiv);
         });
-    }
-}
+    };
+};
 
 function cmdClearSearch() {
     beachsDiv = null;
     locationsDiv = null;
-}
+};
+
+/*function cmdSearch() {
+    xhr.send();
+
+}*/
 
 function cmdSearch() {
-    xhr.send();
-}
+    alert ('Entered Function');
+fetch('./travel_recommendation_api.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Convert the search keyword to lowercase
+    const searchKeyword = 'beach'.toLowerCase();
+
+    // Filter the data for entries related to beaches    
+    const beachRecommendations = data.find(item => {
+      return item.name.toLowerCase().includes(searchKeyword) || 
+             item.description.toLowerCase().includes(searchKeyword);
+    });
+
+    // Display the recommendations
+    console.log(test);
+    // You can now use this data to display the recommendations on your website
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+};
