@@ -52,53 +52,95 @@ xhr.responseType = 'json';
 
 xhr.onload = function () {
     var searchStr = document.getElementById('conditionInput').value;
-    lowerCasesearchStr = searchStr.toLowerCase();
-    alert('Search for: ' + lowerCasesearchStr);
+    lcSearchStr = searchStr.toLowerCase();
+    alert('Search for: ' + lcSearchStr);
     debugger
-    /*var responseData = JSON.parse(xhr.responseText);*/
-    var beaches = xhr.response.beaches;
-    /*var beaches = xhr.response.searchStr;*/
-    /*var beaches = responseData.find(function(item) {
-        return item.name === lowerCasesearchStr;
-    });*/
+
+    if (lcSearchStr === 'beaches') {
+        var beaches = xhr.response.beaches;
+    } else if (lcSearchStr === 'temples') {
+        var beaches = xhr.response.temples;
+    } else if (lcSearchStr === 'countries') {
+        var countries = xrh.response.countries;        
+    }
+
     var locationsDiv = document.getElementById('locations');
 
-  
+    if (lcSearchStr === 'beaches' || lcSearchStr === 'temples'); {
+        alert ('Beaches or Temple is true');
+    
+        beaches.forEach(function(landmark) {
+            var beachDiv = document.createElement('div');
+            /*beachDiv.classList.add('beach');  */
+            beachDiv.classList = "card-info"; 
+            beachDiv.style = "width:100%";
 
-    beaches.forEach(function(beach) {
-        var beachDiv = document.createElement('div');
-        /*beachDiv.classList.add('beach');  */
-        beachDiv.classList = "card-info"; 
-        beachDiv.style = "width:100%";
+            var itemurl = document.createElement('img');
+            itemurl.src = landmark.imageUrl;
+            itemurl.classList = "card-photo";
 
-        var itemurl = document.createElement('img');
-        itemurl.src = beach.imageUrl;
-        itemurl.classList = "card-photo";
+            var infoDiv = document.createElement('div');
+            var beachname = document.createElement('p');
+            beachname.textContent = landmark.name;
+            beachname.classList = "card-name";
 
-        var infoDiv = document.createElement('div');
-        var beachname = document.createElement('p');
-        beachname.textContent = beach.name;
-        beachname.classList = "card-name";
+            var description = document.createElement('p');
+            description.textContent = landmark.description;
+            description.classList = "card-description";
 
-        var description = document.createElement('p');
-        description.textContent = beach.description;
-        description.classList = "card-description";
+            var newbutton = document.createElement('button');
+            newbutton.textContent = "View";
+            newbutton.id = "cmdViewItem";
+            newbutton.classList = "card-button";
 
-        var newbutton = document.createElement('button');
-        newbutton.textContent = "View";
-        newbutton.id = "cmdViewItem";
-        newbutton.classList = "card-button";
+            debugger
+            beachDiv.appendChild(itemurl);
+            beachDiv.appendChild(infoDiv);
+            beachDiv.appendChild(beachname);
+            beachDiv.appendChild(description)
+            beachDiv.appendChild(newbutton);
 
-        debugger
-        beachDiv.appendChild(itemurl);
-        beachDiv.appendChild(infoDiv);
-        beachDiv.appendChild(beachname);
-        beachDiv.appendChild(description)
-        beachDiv.appendChild(newbutton);
+            locationsDiv.appendChild(beachDiv);
+        });
+    };
 
-        locationsDiv.appendChild(beachDiv);
-    });
-};
+    if (lcSearchStr === 'countries') {
+        alert ('Countries!');
+            
+        countries.forEach(function(country) {
+            var countryDiv = document.createElement('div');
+            beachDiv.classList = "card-info"; 
+            beachDiv.style = "width:100%";
+
+            var itemurl = document.createElement('img');
+            itemurl.src = country.imageUrl;
+            itemurl.classList = "card-photo";
+
+            var infoDiv = document.createElement('div');
+            var beachname = document.createElement('p');
+            beachname.textContent = country.name;
+            beachname.classList = "card-name";
+
+            var description = document.createElement('p');
+            description.textContent = country.description;
+            description.classList = "card-description";
+
+            var newbutton = document.createElement('button');
+            newbutton.textContent = "View";
+            newbutton.id = "cmdViewItem";
+            newbutton.classList = "card-button";
+
+            debugger
+            countryDiv.appendChild(itemurl);
+            countryDiv.appendChild(infoDiv);
+            countryDiv.appendChild(beachname);
+            countryDiv.appendChild(description)
+            countryDiv.appendChild(newbutton);
+
+            locationsDiv.appendChild(beachDiv);
+        });
+    }
+}
 
 function cmdClearSearch() {
     beachsDiv = null;
