@@ -163,16 +163,16 @@ fetch('./travel_recommendation_api.json')
   })
   .then(data => {
     // Convert the search keyword to lowercase
-    const searchKeyword = 'beach'.toLowerCase();
+    const searchKeyword = 'beaches'.toLowerCase();
 
     // Filter the data for entries related to beaches    
-    const beachRecommendations = data.find(item => {
+    const beachRecommendations = data.filter(item => {
       return item.name.toLowerCase().includes(searchKeyword) || 
-             item.description.toLowerCase().includes(searchKeyword);
+             item.description.toLowerCase().includes(searchKeyword)
     });
 
     // Display the recommendations
-    console.log(test);
+    console.log(beachRecommendations);
     // You can now use this data to display the recommendations on your website
   })
   .catch(error => {
