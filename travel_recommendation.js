@@ -163,13 +163,19 @@ fetch('./travel_recommendation_api.json')
   })
   .then(data => {
     // Convert the search keyword to lowercase
-    const searchKeyword = 'beaches'.toLowerCase();
+    const searchKeyword = 'Japan'.toLowerCase();
+    console.log (searchKeyword);
+    if (typeof searchKeyword === 'string') {
+        console.log (searchKeyword);
+    } else {
+        console.log('Variable is not a string or is undefined');
+    };
+
 
     // Filter the data for entries related to beaches    
     const beachRecommendations = data.filter(item => {
-      return item.name.toLowerCase().includes(searchKeyword) || 
-             item.description.toLowerCase().includes(searchKeyword)
-    });
+      return item.name === searchKeyword}
+    );
 
     // Display the recommendations
     console.log(beachRecommendations);
