@@ -163,22 +163,24 @@ fetch('./travel_recommendation_api.json')
   })
   .then(data => {
     // Convert the search keyword to lowercase
-    const searchKeyword = 'Japan'.toLowerCase();
+    const searchKeyword = 'Japan';
     console.log (searchKeyword);
-    if (typeof searchKeyword === 'string') {
-        console.log (searchKeyword);
-    } else {
-        console.log('Variable is not a string or is undefined');
-    };
-
+    const testdata = data[0];
 
     // Filter the data for entries related to beaches    
-    const beachRecommendations = data.filter(item => {
+    /*const beachRecommendations = data.filter(item => {
       return item.name === searchKeyword}
-    );
-
+    );*/
+    const beachRecommendations = data.filter(item => {
+        return item.countries === "Japan"});
+   
+    const testInfo = data;
     // Display the recommendations
-    console.log(beachRecommendations);
+    console.log('JSON data: ', data);   
+    console.log('testdata data[0]: ', testdata);
+    console.log('Temples: ', testInfo[0].temples);
+    console.log('Heres the country: ', data[0].countries[1])
+    console.log('filtered Results: ',beachRecommendations)
     // You can now use this data to display the recommendations on your website
   })
   .catch(error => {
