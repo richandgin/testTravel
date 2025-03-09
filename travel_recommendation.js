@@ -171,8 +171,8 @@ fetch('./travel_recommendation_api.json')
     /*const beachRecommendations = data.filter(item => {
       return item.name === searchKeyword}
     );*/
-    const beachRecommendations = data.filter(item => {
-        return item.countries === "Japan"});
+    const beachRecommendations = data.find(item => {
+        return item.name === "Japan"});
    
     const testInfo = data;
     // Display the recommendations

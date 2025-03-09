@@ -1,0 +1,33 @@
+  [{
+    "id": 1,
+    "name": "Australia",
+    "cities": [
+      {
+        "name": "Sydney, Australia",
+        "imageUrl": "Sydney.jpg",
+        "description": "A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."
+      },
+      {
+        "name": "Melbourne, Australia",
+        "imageUrl": "enter_your_image_for_melbourne.jpg",
+        "description": "A cultural hub famous for its art, food, and diverse neighborhoods."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Japan",
+    "cities": [
+      {
+        "name": "Tokyo, Japan",
+        "imageUrl": "enter_your_image_for_tokyo.jpg",
+        "description": "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."
+      },
+      {
+        "name": "Kyoto, Japan",
+        "imageUrl": "enter_your_image_for_kyoto.jpg",
+        "description": "Known for its classical Buddhist temples, as well as gardens, imperial palaces, Shinto shrines, and traditional wooden houses."
+      }
+    ]
+  }
+]
