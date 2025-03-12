@@ -1,0 +1,14 @@
+{
+  "places": [
+    {
+      "name": "Paris",
+      "country": "France",
+      "imageUrl": "paris.jpg"
+    },
+    {
+      "name": "Tokyo",
+      "country": "Japan",
+      "imageUrl": "tokyo.jpg"
+    }
+  ]
+}

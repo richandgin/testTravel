@@ -6,15 +6,21 @@ fetch('./travel_recommendation_api2.json')
       throw new Error('Network response was not ok ' + response.statusText);
     }
     return response.json();
+    const parsedData = response.json();
+    console.log ('parsedData = ', parsedData);
+
   })
   .then(data => {
     // Convert the search keyword to lowercase
     const searchKeyword = 'Japan';
     console.log (searchKeyword);
     const testdata = data[0];
-    console.log ('data[0] = ',testdata)
+    console.log ('data[0] = ',testdata);
     const filteredCountry = data.filter(locations => locations.name === 'Japan');
-    console.log ('filteredCountry = ',filteredCountry)
+    console.log ('filteredCountry = ',filteredCountry);
+    const parsedData = data.json();
+    console.log ('parsedData = ', parsedData);
+
 
     // Filter the data for entries related to beaches    
     /*const beachRecommendations = data.filter(item => {
