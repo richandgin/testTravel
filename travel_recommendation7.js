@@ -7,10 +7,9 @@ function cmdSearch() {
     .then(response => response.json())
     .then(data => {
         // Access the array of places
-        console.log ('data = ', data);
+        /*console.log ('data = ', data);*/
         const places = data[0].countries;
-        const all = data;
-        console.log ('Data 0:',data[0].countries[1])
+        /*console.log ('Data 0:',data[0].countries[1])*/
         
         const allcountries = data[0].countries;
         console.log ('All Countries:',allcountries);
@@ -25,9 +24,14 @@ function cmdSearch() {
             .filter(city => city.name === 'Japan');
         console.log ('Searched City =', foundcities);*/
 
-        const foundcities2 = allcountries
-            .filter(city => {return city.name.toLowerCase().startsWith(searchStr.toLowerCase())});
-        console.log ('Found Cities2: ', foundcities2)
+        const location = data.filter (place => {
+            return place.toLowerCase().includes(searchStr.toLowerCase())
+        });
+        console.log('Found Place: ', location);
+
+        const foundCountry = allcountries
+            .filter(country => {return country.name.toLowerCase().includes(searchStr.toLowerCase())});
+        console.log ('Found Country: ', foundCountry)
 
         // Loop through the places and log their names
         console.log('Countries =', places);
