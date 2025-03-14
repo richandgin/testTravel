@@ -10,7 +10,12 @@ function cmdSearch() {
         /*console.log ('data = ', data);*/
         const places = data[0].countries;
         /*console.log ('Data 0:',data[0].countries[1])*/
-        
+
+        /*The next phase is to create statement classifies the search
+        by Beach, Temple, or Country or any variations and then populate
+        the results with the appropriate data. The data shown will be displayed
+        by some variation of the following data retrievals */
+                
         const allcountries = data[0].countries;
         console.log ('All Countries:',allcountries);
         
