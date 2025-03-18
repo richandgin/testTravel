@@ -29,7 +29,16 @@ function cmdSearch() {
             // Loop through the beaches and log their names
             allbeaches.forEach(beach => {
                 console.log(`Beach: ${beach.name}, Picture: ${beach.imageUrl}, Description: ${beach.description}`);
-                });
+                
+                var beachDiv = document.createElement('div');
+                /*beachDiv.classList.add('beach');  */
+                beachDiv.classList = "card-info"; 
+                beachDiv.style = "width:100%";
+                var beachName = document.createElement('H2');
+                beachName.textContent = beach.name;
+                beachDiv.appendChild(beachName);
+                beachDiv.appendChild(beachDiv);
+            });
         }; 
 
         if (searchStr.toLowerCase().includes('temple')) {
