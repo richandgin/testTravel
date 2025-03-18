@@ -1,48 +1,69 @@
 function cmdSearch() {
     var searchStr = document.getElementById('conditionInput').value;
     /*lcSearchStr = searchStr.toLowerCase();*/
-    alert('Search for: ' + searchStr);
+    let location = null;
+
+     /*let containsBeaches = searchStr.toLowerCase().includes('beach');
+    alert('Contains Beaches: ', containsBeaches);  */
 
     fetch('./travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
         // Access the array of places
-        /*console.log ('data = ', data);*/
-        const places = data[0].countries;
+        /*console.log ('data = ', data);
+        const places = data.countries;*/
         /*console.log ('Data 0:',data[0].countries[1])*/
 
         /*The next phase is to create statement classifies the search
         by Beach, Temple, or Country or any variations and then populate
         the results with the appropriate data. The data shown will be displayed
         by some variation of the following data retrievals */
-                
-        const allcountries = data[0].countries;
-        console.log ('All Countries:',allcountries);
+
+        if (searchStr.toLowerCase().includes('beach')) {
+            let location = 'beaches';
+            const allbeaches = data.beaches;
+
+            /*alert('Location Type entered: ' + location);
+            console.log ('All Beaches:', allbeaches); */
+
+            allbeaches.forEach(beach => {
+                console.log(`Beach: ${beach.name}, Picture: ${beach.imageUrl}, Description: ${beach.description}`);
+                });
+        }; 
+
+        if (searchStr.toLowerCase().includes('temple')) {
+            let location = 'temples';
+            const alltemples = data.temples;
+    
+            /*alert('Location Type entered: ' + location);
+            console.log ('All Temples:', alltemples);*/
+
+            // Loop through the temples and log their names
+            alltemples.forEach(temple => {
+                console.log(`Temple: ${temple.name}, Picture: ${temple.imageUrl}, Description: ${temple.description}`);
+                });
+        };    
+
+        if (searchStr.toLowerCase().includes('country')) {
+            let location = 'countries';
+            const allcountries = data.countries;
+            /*
+            alert('Location Type entered: ' + location);
+            console.log ('All Countries:', allcountries); */
+
+            allcountries.forEach(country => {
+                console.log(`Country: ${country.name}`);
+                  country.cities.forEach(city => {
+                    console.log(`  City: ${city.name}, Picture: ${city.imageUrl}, Description: ${city.description}`);
+                    });  
+                }); 
+        };
         
-        const alltemples = data[0].temples;
-        console.log ('All Temples:',alltemples);
+        if (location === null) {
+            alert('Sorry, no Location for that entry was found. Please try the words Beach, Temples, or Country');
+        };
+       
 
-        const allbeaches = data[0].beaches;
-        console.log ('All Beaches:',allbeaches);
-
-        /*const foundcities = allcountries
-            .filter(city => city.name === 'Japan');
-        console.log ('Searched City =', foundcities);*/
-
-        const location = data.filter (place => {
-            return place.toLowerCase().includes(searchStr.toLowerCase())
-        });
-        console.log('Found Place: ', location);
-
-        const foundCountry = allcountries
-            .filter(country => {return country.name.toLowerCase().includes(searchStr.toLowerCase())});
-        console.log ('Found Country: ', foundCountry)
-
-        // Loop through the places and log their names
-        console.log('Countries =', places);
-        places.forEach(place => {
-        console.log(`Place: ${place.name}, Country: ${place.cities}`);
-        });
     })
     .catch(error => console.error('Error fetching the JSON file:', error));
 };
