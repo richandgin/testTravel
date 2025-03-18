@@ -26,6 +26,7 @@ function cmdSearch() {
             /*alert('Location Type entered: ' + location);
             console.log ('All Beaches:', allbeaches); */
 
+            // Loop through the beaches and log their names
             allbeaches.forEach(beach => {
                 console.log(`Beach: ${beach.name}, Picture: ${beach.imageUrl}, Description: ${beach.description}`);
                 });
@@ -51,6 +52,7 @@ function cmdSearch() {
             alert('Location Type entered: ' + location);
             console.log ('All Countries:', allcountries); */
 
+            // Loop through the countries and log their cities
             allcountries.forEach(country => {
                 console.log(`Country: ${country.name}`);
                   country.cities.forEach(city => {
