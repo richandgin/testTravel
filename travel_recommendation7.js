@@ -1,7 +1,7 @@
 function cmdSearch() {
     var searchStr = document.getElementById('conditionInput').value;
     /*lcSearchStr = searchStr.toLowerCase();*/
-    let location = null;
+    var locationFound = false;
 
      /*let containsBeaches = searchStr.toLowerCase().includes('beach');
     alert('Contains Beaches: ', containsBeaches);  */
@@ -20,7 +20,7 @@ function cmdSearch() {
         by some variation of the following data retrievals */
 
         if (searchStr.toLowerCase().includes('beach')) {
-            let location = 'beaches';
+            locationFound = true;
             const allbeaches = data.beaches;
 
             /*alert('Location Type entered: ' + location);
@@ -32,7 +32,7 @@ function cmdSearch() {
         }; 
 
         if (searchStr.toLowerCase().includes('temple')) {
-            let location = 'temples';
+            locationFound = true;
             const alltemples = data.temples;
     
             /*alert('Location Type entered: ' + location);
@@ -45,7 +45,7 @@ function cmdSearch() {
         };    
 
         if (searchStr.toLowerCase().includes('country')) {
-            let location = 'countries';
+            locationFound = true;
             const allcountries = data.countries;
             /*
             alert('Location Type entered: ' + location);
@@ -59,8 +59,8 @@ function cmdSearch() {
                 }); 
         };
         
-        if (location === null) {
-            alert('Sorry, no Location for that entry was found. Please try the words Beach, Temples, or Country');
+        if (locationFound === false) {
+            alert('Sorry, the location you entered "' + searchStr + '" was not found. Please try the words "Beach", "Temples", or "Country".');
         };
        
 
