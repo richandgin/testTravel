@@ -2,6 +2,12 @@ function cmdSearch() {
     var searchStr = document.getElementById('conditionInput').value;
     /*lcSearchStr = searchStr.toLowerCase();*/
     var locationFound = false;
+    //Get page location for this section to update.
+    var locationDiv = document.getElementById('locationInfo');
+        locationDiv.classList = "split-copntent-right";
+        locationDiv.style.width = "60%";
+        locationDiv.style.background ="black";
+
 
      /*let containsBeaches = searchStr.toLowerCase().includes('beach');
     alert('Contains Beaches: ', containsBeaches);  */
@@ -30,14 +36,32 @@ function cmdSearch() {
             allbeaches.forEach(beach => {
                 console.log(`Beach: ${beach.name}, Picture: ${beach.imageUrl}, Description: ${beach.description}`);
                 
-                var beachDiv = document.createElement('div');
                 /*beachDiv.classList.add('beach');  */
-                beachDiv.classList = "card-info"; 
-                beachDiv.style = "width:100%";
-                var beachName = document.createElement('H2');
-                beachName.textContent = beach.name;
-                beachDiv.appendChild(beachName);
-                beachDiv.appendChild(beachDiv);
+
+                var locationCard = document.createElement('div');
+                    locationCard.classList = "w3-card-4";
+                    locationCard.style = "width:80%";
+                    locationCard.style.backgroundColor = 'white';
+
+                var locationImage = document.createElement('img');
+                    locationImage.src = beach.imageUrl;
+                    locationImage.alt = beach.description;
+                    locationImage.classList = "card-photo";
+
+                var locationTitle = document.createElement('h');
+                    locationTitle.textContent = `Beach: ${beach.name}`;
+                    locationTitle.style.fontWeight = 'bold';
+                    locationTitle.style.color = 'black';
+
+                var locationName = document.createElement('p');
+                    locationName.textContent = `Description: ${beach.description}`;
+                    locationName.classList = 'card-description'
+
+
+                locationCard.appendChild(locationImage);
+                locationCard.appendChild(locationTitle);
+                locationCard.appendChild(locationName);
+                locationDiv.appendChild(locationCard);
             });
         }; 
 
