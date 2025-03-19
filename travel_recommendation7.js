@@ -27,9 +27,10 @@ function cmdSearch() {
             const allbeaches = data.beaches;
 
             var locationDiv = document.getElementById('locationInfo');
-            locationDiv.classList = "split-copntent-right";
-            locationDiv.style.width = "60%";
-            locationDiv.style.background ="black";
+            /*locationDiv.classList = "split-copntent-right";*/
+            locationDiv.style.width = "80%";
+            locationDiv.style.background = "tranparent";
+            locationDiv.style.padding = "10px";
 
             /*alert('Location Type entered: ' + location);
             console.log ('All Beaches:', allbeaches); */
@@ -41,19 +42,23 @@ function cmdSearch() {
                 /*beachDiv.classList.add('beach');  */
 
                 var locationCard = document.createElement('div');
-                    locationCard.classList = "w3-card-4";
-                    locationCard.style = "width:80%";
+                    locationCard.classList = "card-info";
+                    locationCard.style = "width:100%";
+                    
                     locationCard.style.backgroundColor = 'white';
 
                 var locationImage = document.createElement('img');
                     locationImage.src = beach.imageUrl;
                     locationImage.alt = beach.description;
                     locationImage.classList = "card-photo";
+                    locationImage.style.borderTopLeftRadius = "10px"; 
+                    locationImage.style.borderTopRightRadius = "10px";
 
                 var locationTitle = document.createElement('h');
                     locationTitle.textContent = `Beach: ${beach.name}`;
                     locationTitle.style.fontWeight = 'bold';
                     locationTitle.style.color = 'black';
+                    locationTitle.style.padding = '0px 10px';
 
                 var locationName = document.createElement('p');
                     locationName.textContent = `Description: ${beach.description}`;

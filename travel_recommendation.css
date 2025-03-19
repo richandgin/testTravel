@@ -131,6 +131,13 @@ nav a {
     color: white;
 }
 
+.two-panels {
+    display: flex;
+}
+
+.two-panels > div {
+    width: 100%;
+}
 .split-content-left {
     width:100%;
     display: flex;
@@ -142,10 +149,10 @@ nav a {
 }
 
 .split-content-right {
-    width:45%;
+    width:60%;
     display: flex;
     overflow: none;
-    margin-left: 120px; /* Same as the width of the sidenav */
+    margin-left: 40px; /* Same as the width of the sidenav */
     margin-right: 10px;
     padding: 20px;
     color: white;
@@ -274,9 +281,10 @@ nav a {
     width: 400px;
     background-color: white;
     color: black;
-    width: 60%;
+    width: 100%;
     padding: 0px;
     box-shadow: black 5px;
+    border-radius: 10px;
   }
 
   .card-name {
@@ -289,7 +297,7 @@ nav a {
     font-weight: normal;
     font-size: small;
     color: grey;
-    padding: 0px 20px;
+    padding: 0px 10px;
   }
 
   .card-photo {
