@@ -1,10 +1,17 @@
+function cmdClearSearch() {
+    //Set the input field to null
+    document.getElementById('conditionInput').value = '';
+    var locationDiv = document.getElementById('locationInfo');
+        locationDiv.innerHTML = '';
+}
+
 function cmdSearch() {
+    //Clear all previous searches
+
     var searchStr = document.getElementById('conditionInput').value;
     /*lcSearchStr = searchStr.toLowerCase();*/
     var locationFound = false;
     //Get page location for this section to update.
-
-
 
      /*let containsBeaches = searchStr.toLowerCase().includes('beach');
     alert('Contains Beaches: ', containsBeaches);  */
@@ -27,10 +34,11 @@ function cmdSearch() {
             const allbeaches = data.beaches;
 
             var locationDiv = document.getElementById('locationInfo');
-            /*locationDiv.classList = "split-copntent-right";*/
-            locationDiv.style.width = "80%";
-            locationDiv.style.background = "tranparent";
-            locationDiv.style.padding = "10px";
+                locationDiv.innerHTML = '';
+                /*locationDiv.classList = "split-copntent-right";*/
+                locationDiv.style.width = "80%";
+                locationDiv.style.background = "tranparent";
+                locationDiv.style.padding = "10px";
 
             /*alert('Location Type entered: ' + location);
             console.log ('All Beaches:', allbeaches); */
@@ -44,7 +52,6 @@ function cmdSearch() {
                 var locationCard = document.createElement('div');
                     locationCard.classList = "card-info";
                     locationCard.style = "width:100%";
-                    
                     locationCard.style.backgroundColor = 'white';
 
                 var locationImage = document.createElement('img');
@@ -74,6 +81,13 @@ function cmdSearch() {
         if (searchStr.toLowerCase().includes('temple')) {
             locationFound = true;
             const alltemples = data.temples;
+
+            var locationDiv = document.getElementById('locationInfo');
+                locationDiv.innerHTML = '';
+                /*locationDiv.classList = "split-copntent-right";*/
+                locationDiv.style.width = "80%";
+                locationDiv.style.background = "tranparent";
+                locationDiv.style.padding = "10px";
     
             /*alert('Location Type entered: ' + location);
             console.log ('All Temples:', alltemples);*/
@@ -81,7 +95,34 @@ function cmdSearch() {
             // Loop through the temples and log their names
             alltemples.forEach(temple => {
                 console.log(`Temple: ${temple.name}, Picture: ${temple.imageUrl}, Description: ${temple.description}`);
-                });
+            
+                var locationCard = document.createElement('div');
+                locationCard.classList = "card-info";
+                locationCard.style = "width:100%";
+                locationCard.style.backgroundColor = 'white';
+
+            var locationImage = document.createElement('img');
+                locationImage.src = temple.imageUrl;
+                locationImage.alt = temple.description;
+                locationImage.classList = "card-photo";
+                locationImage.style.borderTopLeftRadius = "10px"; 
+                locationImage.style.borderTopRightRadius = "10px";
+            
+            var locationTitle = document.createElement('h');
+                locationTitle.textContent = `Temple: ${temple.name}`;
+                locationTitle.style.fontWeight = 'bold';
+                locationTitle.style.color = 'black';
+                locationTitle.style.padding = '0px 10px';
+
+            var locationName = document.createElement('p');
+                locationName.textContent = `Description: ${temple.description}`;
+                locationName.classList = 'card-description'
+
+            locationCard.appendChild(locationImage);
+            locationCard.appendChild(locationTitle);
+            locationCard.appendChild(locationName);
+            locationDiv.appendChild(locationCard);
+            });
         };    
 
         if (searchStr.toLowerCase().includes('country')) {
