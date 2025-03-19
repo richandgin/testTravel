@@ -142,6 +142,8 @@ function cmdSearch() {
         };
         
         if (locationFound === false) {
+            var locationDiv = document.getElementById('locationInfo');
+                locationDiv.innerHTML = '';
             alert('Sorry, the location you entered "' + searchStr + '" was not found. Please try the words "Beach", "Temples", or "Country".');
         };
        
