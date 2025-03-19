@@ -3,10 +3,7 @@ function cmdSearch() {
     /*lcSearchStr = searchStr.toLowerCase();*/
     var locationFound = false;
     //Get page location for this section to update.
-    var locationDiv = document.getElementById('locationInfo');
-        locationDiv.classList = "split-copntent-right";
-        locationDiv.style.width = "60%";
-        locationDiv.style.background ="black";
+
 
 
      /*let containsBeaches = searchStr.toLowerCase().includes('beach');
@@ -28,6 +25,11 @@ function cmdSearch() {
         if (searchStr.toLowerCase().includes('beach')) {
             locationFound = true;
             const allbeaches = data.beaches;
+
+            var locationDiv = document.getElementById('locationInfo');
+            locationDiv.classList = "split-copntent-right";
+            locationDiv.style.width = "60%";
+            locationDiv.style.background ="black";
 
             /*alert('Location Type entered: ' + location);
             console.log ('All Beaches:', allbeaches); */
@@ -56,7 +58,6 @@ function cmdSearch() {
                 var locationName = document.createElement('p');
                     locationName.textContent = `Description: ${beach.description}`;
                     locationName.classList = 'card-description'
-
 
                 locationCard.appendChild(locationImage);
                 locationCard.appendChild(locationTitle);
