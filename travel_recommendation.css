@@ -318,3 +318,9 @@ nav a {
     width: 60px;
     height: 35px;
   }
+
+  .country-Info-Bar {
+    background-color: #2b8b87;
+    border-radius: 5px;
+    padding-left: 10px;
+  }

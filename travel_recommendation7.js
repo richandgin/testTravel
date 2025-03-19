@@ -150,6 +150,13 @@ function cmdSearch() {
         if (searchStr.toLowerCase().includes('country')) {
             locationFound = true;
             const allcountries = data.countries;
+
+            var locationDiv = document.getElementById('locationInfo');
+            locationDiv.innerHTML = '';
+            /*locationDiv.classList = "split-copntent-right";*/
+            locationDiv.style.width = "80%";
+            locationDiv.style.background = "tranparent";
+            locationDiv.style.padding = "10px";
             /*
             alert('Location Type entered: ' + location);
             console.log ('All Countries:', allcountries); */
@@ -157,9 +164,57 @@ function cmdSearch() {
             // Loop through the countries and log their cities
             allcountries.forEach(country => {
                 console.log(`Country: ${country.name}`);
-                  country.cities.forEach(city => {
+                var countryBar = document.createElement('div');
+                    countryBar.classList = 'country-Info-Bar';    
+            
+                var countryText = document.createElement('h2');
+                    countryText.textContent = country.name;
+                    countryText.classList = 'country-Info-Bar';
+                    /*countryText.color = 'black';*/
+                
+                locationDiv.appendChild(countryBar);
+                locationDiv.appendChild(countryText);
+                
+                country.cities.forEach(city => {
+
                     console.log(`  City: ${city.name}, Picture: ${city.imageUrl}, Description: ${city.description}`);
-                    });  
+                
+                    var locationCard = document.createElement('div');
+                        locationCard.classList = "card-info";
+                        locationCard.style = "width:100%";
+                        locationCard.style.backgroundColor = 'white';
+        
+                    var locationImage = document.createElement('img');
+                        locationImage.src = city.imageUrl;
+                        locationImage.alt = city.description;
+                        locationImage.classList = "card-photo";
+                        locationImage.style.borderTopLeftRadius = "10px"; 
+                        locationImage.style.borderTopRightRadius = "10px";
+
+                    var locationTitle = document.createElement('h');
+                        locationTitle.textContent = `City: ${city.name}`;
+                        locationTitle.style.fontWeight = 'bold';
+                        locationTitle.style.color = 'black';
+                        locationTitle.style.padding = '0px 10px';
+        
+                    var locationName = document.createElement('p');
+                        locationName.textContent = `Description: ${city.description}`;
+                        locationName.classList = 'card-description'
+                    
+                    var locationButton = document.createElement('button');
+                        locationButton.id = 'btnVisit';
+                        locationButton.onclick = 'cmdVisit()';
+                        locationButton.textContent = 'Visit';
+                        /*locationButton.addEventListener = 'click', 'cmdvisit()';*/
+        
+                        locationButton.classList = 'card-button';
+        
+                    locationCard.appendChild(locationImage);
+                    locationCard.appendChild(locationTitle);
+                    locationCard.appendChild(locationName);
+                    locationCard.appendChild(locationButton);
+                    locationDiv.appendChild(locationCard);
+                });  
                 }); 
         };
         
