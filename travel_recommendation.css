@@ -278,11 +278,11 @@ nav a {
   }
 
   .card-info {
-    width: 400px;
+    width: 300px;
     background-color: white;
     color: black;
     width: 100%;
-    padding: 0px;
+    padding: 10px;
     box-shadow: black 5px;
     border-radius: 10px;
   }
@@ -297,7 +297,8 @@ nav a {
     font-weight: normal;
     font-size: small;
     color: grey;
-    padding: 0px 10px 10px;
+    padding-left: 10px;
+    /*padding: 0px 10px 10px;*/
   }
 
   .card-photo {
@@ -307,13 +308,13 @@ nav a {
   }
 
   .card-button {
-    padding: 5px 10px;
-    margin-left: 5px;
+    margin-left: 10px;
     border-radius: 4px;
     color: white;
-    font-size: small;
+    font-size: normal;
     background-color: #2b8b87;
     border: none;
     cursor: pointer;
-    padding: 5px 10px;
+    width: 60px;
+    height: 35px;
   }

@@ -71,9 +71,20 @@ function cmdSearch() {
                     locationName.textContent = `Description: ${beach.description}`;
                     locationName.classList = 'card-description'
 
+                var locationButton = document.createElement('button');
+                    locationButton.id = 'btnVisit';
+                    locationButton.textContent = 'Visit';
+                    locationButton.onclick = 'cmdVisit()';
+                    locationButton.classList = 'card-button';
+
+                var blankLine = document.createElement('br')
+                    blankLine.textContent = '';
+
                 locationCard.appendChild(locationImage);
                 locationCard.appendChild(locationTitle);
                 locationCard.appendChild(locationName);
+                locationCard.appendChild(locationButton);
+                locationCard.appendChild(blankLine);
                 locationDiv.appendChild(locationCard);
             });
         }; 
@@ -117,12 +128,23 @@ function cmdSearch() {
             var locationName = document.createElement('p');
                 locationName.textContent = `Description: ${temple.description}`;
                 locationName.classList = 'card-description'
+            
+            var locationButton = document.createElement('button');
+                locationButton.id = 'btnVisit';
+                locationButton.onclick = 'cmdVisit()';
+                locationButton.textContent = 'Visit';
+                /*locationButton.addEventListener = 'click', 'cmdvisit()';*/
+
+                locationButton.classList = 'card-button';
 
             locationCard.appendChild(locationImage);
             locationCard.appendChild(locationTitle);
             locationCard.appendChild(locationName);
+            locationCard.appendChild(locationButton);
             locationDiv.appendChild(locationCard);
+
             });
+            locationButton.addEventListener('click', cmdVisit());
         };    
 
         if (searchStr.toLowerCase().includes('country')) {
@@ -150,4 +172,8 @@ function cmdSearch() {
 
     })
     .catch(error => console.error('Error fetching the JSON file:', error));
+};
+
+function cmdVisit() {
+    alert('Call a real travle service and book today!');
 };
