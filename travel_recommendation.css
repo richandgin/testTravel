@@ -214,8 +214,9 @@ nav a {
 
   .myTeam button {
     width: 200px;
+    height: 40px;
     color: white;
-    background-color: rgb(101, 101, 243);
+    background-color: rgb(67, 67, 194);
     opacity: 1;
     border-radius: 4px;
   }
