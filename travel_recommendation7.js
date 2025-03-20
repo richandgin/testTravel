@@ -176,6 +176,10 @@ function cmdSearch() {
                 locationDiv.appendChild(countryText);
                 
                 country.cities.forEach(city => {
+                    
+                    const options = { timeZone: city.timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+                    const cityTime = new Date().toLocaleTimeString('en-US', options);
+                    console.log(`Current time in ${city.name} is: ` + cityTime);
 
                     console.log(`  City: ${city.name}, Picture: ${city.imageUrl}, Description: ${city.description}`);
                 
@@ -196,10 +200,14 @@ function cmdSearch() {
                         locationTitle.style.fontWeight = 'bold';
                         locationTitle.style.color = 'black';
                         locationTitle.style.padding = '0px 10px';
-        
+     
                     var locationName = document.createElement('p');
                         locationName.textContent = `Description: ${city.description}`;
-                        locationName.classList = 'card-description'
+                        locationName.classList = 'card-description';
+
+                    var locationTime = document.createElement('p');
+                        locationTime.textContent = `Current local time: ` + cityTime;
+                        locationTime.classList = 'card-description';
                     
                     var locationButton = document.createElement('button');
                         locationButton.id = 'btnVisit';
@@ -212,11 +220,12 @@ function cmdSearch() {
                     locationCard.appendChild(locationImage);
                     locationCard.appendChild(locationTitle);
                     locationCard.appendChild(locationName);
+                    locationCard.appendChild(locationTime);
                     locationCard.appendChild(locationButton);
                     locationDiv.appendChild(locationCard);
                 });  
-                }); 
-        };
+            }); 
+         };
         
         if (locationFound === false) {
             var locationDiv = document.getElementById('locationInfo');

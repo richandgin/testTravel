@@ -6,6 +6,7 @@
         "cities": [
           {
             "name": "Sydney, Australia",
+            "timezone": "Australia/Sydney",
             "imageUrl": "Sydney.jpg",
             "description": "A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."
           },
@@ -22,11 +23,13 @@
         "cities": [
           {
             "name": "Tokyo, Japan",
+            "timezone": "Asia/Tokyo",
             "imageUrl": "Tokyo Japan.jpg",
             "description": "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."
           },
           {
             "name": "Kyoto, Japan",
+            "timezone": "Asia/Tokyo",
             "imageUrl": "Kyoto Japan.jpg",
             "description": "Known for its historic temples, gardens, and traditional tea houses."
           }
@@ -38,11 +41,13 @@
         "cities": [
           {
             "name": "Rio de Janeiro, Brazil",
+            "timezone": "America/Sao_Paulo",
             "imageUrl": "Rio de Janeiro Brazil.jpg",
             "description": "A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks."
           },
           {
             "name": "São Paulo, Brazil",
+            "timezone": "America/Sao_Paulo",
             "imageUrl": "Sao Paulo Brazil.jpg",
             "description": "The financial hub with diverse culture, arts, and a vibrant nightlife."
           }
