@@ -247,3 +247,10 @@ function cmdVisit() {
 function addContact() {
     alert('Hopeully you realize that this is only a educational assignment and not a real travel site.  This is just an example that a listener was setup of for the click event.')
 };
+
+function checkEnterKey(event) {
+    // Check if the Enter key (key code 13) is pressed
+    if (event.key === 'Enter') {
+        cmdSearch();
+    };
+  };
