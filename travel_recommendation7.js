@@ -74,7 +74,6 @@ function cmdSearch() {
                 var locationButton = document.createElement('button');
                     locationButton.id = 'btnVisit';
                     locationButton.textContent = 'Visit';
-                    locationButton.onclick = 'cmdVisit()';
                     locationButton.classList = 'card-button';
 
                 var blankLine = document.createElement('br')
@@ -131,9 +130,7 @@ function cmdSearch() {
             
             var locationButton = document.createElement('button');
                 locationButton.id = 'btnVisit';
-                locationButton.onclick = 'cmdVisit()';
                 locationButton.textContent = 'Visit';
-                /*locationButton.addEventListener = 'click', 'cmdvisit()';*/
 
                 locationButton.classList = 'card-button';
 
@@ -211,10 +208,7 @@ function cmdSearch() {
                     
                     var locationButton = document.createElement('button');
                         locationButton.id = 'btnVisit';
-                        locationButton.onclick = 'cmdVisit()';
                         locationButton.textContent = 'Visit';
-                        /*locationButton.addEventListener = 'click', 'cmdvisit()';*/
-        
                         locationButton.classList = 'card-button';
         
                     locationCard.appendChild(locationImage);
@@ -236,6 +230,13 @@ function cmdSearch() {
 
     })
     .catch(error => console.error('Error fetching the JSON file:', error));
+
+    alert('Testing');
+
+    document.getElementById('btnVisit').addEventListener("click", function() {
+        alert('Visit Pushed');
+    });
+
 };
 
 function cmdVisit() {
