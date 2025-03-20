@@ -243,3 +243,7 @@ function cmdSearch() {
 function cmdVisit() {
     alert('Call a real travel service and book today!');
 };
+
+function addContact() {
+    alert('Hopeully you realize that this is only a educational assignment and not a real travel site.  This is just an example that a listener was setup of for the click event.')
+};
