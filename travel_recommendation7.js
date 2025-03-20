@@ -75,6 +75,9 @@ function cmdSearch() {
                     locationButton.id = 'btnVisit';
                     locationButton.textContent = 'Visit';
                     locationButton.classList = 'card-button';
+                    locationButton.addEventListener('click',()=>{
+                        cmdVisit();
+                    });
 
                 var blankLine = document.createElement('br')
                     blankLine.textContent = '';
@@ -131,8 +134,10 @@ function cmdSearch() {
             var locationButton = document.createElement('button');
                 locationButton.id = 'btnVisit';
                 locationButton.textContent = 'Visit';
-
                 locationButton.classList = 'card-button';
+                locationButton.addEventListener('click',()=>{
+                    cmdVisit();
+                });
 
             locationCard.appendChild(locationImage);
             locationCard.appendChild(locationTitle);
@@ -210,6 +215,9 @@ function cmdSearch() {
                         locationButton.id = 'btnVisit';
                         locationButton.textContent = 'Visit';
                         locationButton.classList = 'card-button';
+                        locationButton.addEventListener('click',()=>{
+                            cmdVisit();
+                        });
         
                     locationCard.appendChild(locationImage);
                     locationCard.appendChild(locationTitle);
@@ -230,15 +238,8 @@ function cmdSearch() {
 
     })
     .catch(error => console.error('Error fetching the JSON file:', error));
-
-    /*alert('Testing');*/
-
-    document.getElementById('btnVisit').addEventListener("click", function() {
-        alert('Visit Pushed');
-    });
-
 };
 
 function cmdVisit() {
-    alert('Call a real travle service and book today!');
+    alert('Call a real travel service and book today!');
 };
