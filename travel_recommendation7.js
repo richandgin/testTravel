@@ -231,7 +231,7 @@ function cmdSearch() {
     })
     .catch(error => console.error('Error fetching the JSON file:', error));
 
-    alert('Testing');
+    /*alert('Testing');*/
 
     document.getElementById('btnVisit').addEventListener("click", function() {
         alert('Visit Pushed');
